@@ -55,7 +55,7 @@ sap.ui.define([
 		},
 		onDataConfirmation: function(){
 			var that = this;
-			sap.m.MessageBox.confirm("Are your really sure want to submit?", {
+			sap.m.MessageBox.confirm("Are your sure want to submit?", {
 			    title: "Confirm",
 			    onClose: function(oAction) {
 		          if (oAction === sap.m.MessageBox.Action.OK) {
