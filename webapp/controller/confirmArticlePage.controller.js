@@ -65,7 +65,7 @@ sap.ui.define([
 		},
 		_showSuccessMessage: function() {
 			var that = this;
-			sap.m.MessageBox.success("Layout Article Submitted Successfully", {
+			sap.m.MessageBox.success("Layout Article Submitted Successfully ok", {
 			    title: "Success",
 			    onClose: function(oAction) {
 		          if (oAction === sap.m.MessageBox.Action.OK) {
