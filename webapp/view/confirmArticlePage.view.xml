@@ -1,0 +1,67 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:table="sap.ui.table"
+	controllerName="com.test.mock_ListingApp.controller.confirmArticlePage" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="{i18n>confirmPageTitle}" navButtonPress="onConfirmBackPress" showNavButton="true" showFooter="true">
+				<content>
+					<form:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" title="Details" labelSpanXL="3" labelSpanL="3"
+						labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+						columnsL="1" columnsM="1" singleContainerFullSize="false">
+						<form:content>
+							<Label text="{i18n>summarySheet}"/>
+							<Text text="{abc>/Country}"/>
+							<Label text="{i18n>articleNo}"/>
+							<Text text="{abc>/ArticleId}"/>
+							<Label text="{i18n>articleDesc}"/>
+							<Text text="{abc>/ArticleDesc}"/>
+							<Label text="{i18n>exeDate}"/>
+							<Text text="{abc>/executionDate}"/>
+							<Label text="{i18n>ListedDateFrom}"/>
+							<Text text="{abc>/FromDate}"/>
+							<Label text="{i18n>ListedDateTo}"/>
+							<Text text="{abc>/ToDate}"/>
+						</form:content>
+					</form:SimpleForm>
+					<VBox width="100%" id="__vbox0" alignContent="Center" justifyContent="Center" alignItems="Center" direction="Column">
+						<Table noDataText="Summary List" id="IdSummaryModuleList" class="sapUiLargeMarginBeginEnd sapUiSmallMarginTopBottom" 
+						items="{ path: 'abc>/summary', sorter: { path: 'RegionCode' } }" width="100%">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="Summary List" level="H2"/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column width="12em">
+									<Text text="Region Code"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Region Discription"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{abc>RegionCode}"/>
+										<Text text="{abc>RegionDisc}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</VBox>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button type="Accept" text="Back" press="onConfirmPageBack">
+							<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
+						</Button>
+						<Button type="Accept" text="Submit" press="onDataConfirmation">
+							<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
+						</Button>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

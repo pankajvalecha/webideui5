@@ -1,0 +1,149 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" controllerName="com.test.mock_ListingApp.controller.SearchArticlePage" displayBlock="true">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Label text="Country :" class="sapUiMediumMarginTopBottom sapUiLargeMarginBegin sapUiTinyMarginEnd" design="Bold" labelFor="idCBCountry"/>
+					<ComboBox id="idCBCountry" width="15%" items="{ path: '/CountryList', sorter: { path: 'CountryCode' } }" showSecondaryValues="true"
+						class="sapUiSmallMarginTopBottom" >
+						<core:ListItem key="{CountryCode}" text="{CountryCode}" additionalText="{CountryName}"/>
+						<layoutData>
+							<l:GridData span="L2 M2 S4"/>
+						</layoutData>
+					</ComboBox>
+					<Label text="Article Id :" class="sapUiMediumMarginTopBottom sapUiTinyMarginBeginEnd" design="Bold" labelFor="idCBArticleId"/>
+					<ComboBox id="idCBArticleId" width="15%" items="{ path: '/ArticleList', sorter: { path: 'ArticleId' } }" showSecondaryValues="true"
+						class="sapUiSmallMarginTopBottom">
+						<core:ListItem key="{ArticleId}" text="{ArticleId}" additionalText="{ArticleDescription}"/>
+						<layoutData>
+							<l:GridData span="L2 M2 S4"/>
+						</layoutData>
+					</ComboBox>
+					<Label text="From Date :" class="sapUiMediumMarginTopBottom sapUiTinyMarginBeginEnd" design="Bold" labelFor="IdFromDate"/>
+					<DatePicker id="IdFromDate" placeholder="Enter From Date" width="20%"
+						value="{path:'/dateValueFrom', type:'sap.ui.model.type.Date', formatOptions: { style: 'medium', strictParsing: true}}"
+						class="sapUiSmallMarginTopBottom" change="onChangeDateValidation">
+						<layoutData>
+							<l:GridData span="L2 M2 S4"/>
+						</layoutData>
+					</DatePicker>
+					<Label text="To Date :" class="sapUiMediumMarginTopBottom sapUiTinyMarginBeginEnd" design="Bold" labelFor="IdToDate"/>
+					<DatePicker id="IdToDate" placeholder="Enter To Date" width="20%"
+						value="{path:'/dateValueTo', type:'sap.ui.model.type.Date', formatOptions: { style: 'medium', strictParsing: true}}"
+						class="sapUiSmallMarginTopBottom" change="onChangeDateValidation">
+						<layoutData>
+							<l:GridData span="L2 M2 S4"/>
+						</layoutData>
+					</DatePicker>
+					<!--<form:Form editable="true" id="__form0">
+						<form:layout>
+							<form:ResponsiveGridLayout labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1"/>
+						</form:layout>
+						<form:formContainers>
+							<form:FormContainer id="__container1">
+								<form:formElements>
+									<form:FormElement id="ID_Country" label="Country">
+										<form:fields></form:fields>
+									</form:FormElement>
+									<form:FormElement label="Article Id" id="ID_Article_Id">
+										<form:fields></form:fields>
+									</form:FormElement>
+									<form:FormElement label="From Date" id="ID_From_Date">
+										<form:fields></form:fields>
+									</form:FormElement>
+									<form:FormElement label="To Date" id="ID_To_Date">
+										<form:fields></form:fields>
+									</form:FormElement>
+								</form:formElements>
+							</form:FormContainer>
+						</form:formContainers>
+					</form:Form>-->
+					<VBox width="100%" id="__vbox0" alignContent="Center" justifyContent="Center" alignItems="Center" direction="Column">
+						<Table noDataText="Region Rietz has no modules" id="IdTableRegionRietz" mode="MultiSelect"
+							class="sapUiLargeMarginBeginEnd sapUiSmallMarginTopBottom" items="{ path: '/RegionRietz', sorter: { path: 'RegionCode' } }" width="100%">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="Region Rietz" level="H2"/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column width="12em">
+									<Text text="Region Code"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Region Discription"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{RegionCode}"/>
+										<Text text="{RegionDisc}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<Table noDataText="Region HausmannstÃ¤tten has no modules" id="IdHausman" mode="MultiSelect"
+							class="sapUiLargeMarginBeginEnd sapUiSmallMarginTopBottom" items="{ path: '/RegionHausmannstätten', sorter: { path: 'RegionCode' } }"
+							width="100%">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="Region HausmannstÃ¤tten" level="H2"/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column width="12em">
+									<Text text="Region Code"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Region Discription"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{RegionCode}"/>
+										<Text text="{RegionDisc}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<Table noDataText="Region Sattledt has no modules" id="IdTableRegionSattledt" mode="MultiSelect"
+							class="sapUiLargeMarginBeginEnd sapUiSmallMarginTopBottom" items="{ path: '/RegionSattledt', sorter: { path: 'RegionCode' } }" width="100%">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="Region Sattledt" level="H2"/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column width="12em">
+									<Text text="Region Code"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Region Discription"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{RegionCode}"/>
+										<Text text="{RegionDisc}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</VBox>
+				</content>
+				<footer>
+					<OverflowToolbar id="otbFooter">
+						<ToolbarSpacer/>
+						<Button type="Accept" text="Confirm" press="onPressContinue">
+							<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
+						</Button>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
